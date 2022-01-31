@@ -1,5 +1,5 @@
 .address__item:not(:last-child) {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 .address__link {
@@ -20,4 +20,10 @@
 
 .address__link--color--grey {
   color: rgba(255, 255, 255, 0.6);
+}
+
+@include desktop() {
+  .address__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
 }

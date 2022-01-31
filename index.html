@@ -41,6 +41,7 @@
           <a class="page-header__logo logo link" href="./index.html"
             ><span class="logo__accent-color">Web</span>Studio</a
           >
+
           <!-- Навигация сайта  -->
           <ul class="page-header__menu menu list">
             <li class="menu__item">
@@ -61,8 +62,9 @@
         <ul class="page-header__contacts contacts list">
           <li class="contacts__item">
             <a class="contacts__link link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/sprite.svg#envelope"></use>
+              <svg class="contacts__icon contacts__icon--wide">
+                <use class="contacts__icon-d" href="./images/sprite.svg#envelope"></use>
+                <use class="contacts__icon-t" href="./images/sprite.svg#envelope-tablet"></use>
               </svg>
               info@devstudio.com</a
             >
@@ -70,17 +72,94 @@
 
           <li class="contacts__item">
             <a class="contacts__link link" href="tel:+380961111111">
-              <svg class="contacts__icon" width="10" height="16">
-                <use href="./images/sprite.svg#smartphone"></use>
+              <svg class="contacts__icon contacts__icon--high">
+                <use class="contacts__icon-d" href="./images/sprite.svg#smartphone"></use>
+                <use class="contacts__icon-t" href="./images/sprite.svg#smartphone-tablet"></use>
               </svg>
               +38 096 111 11 11</a
             >
           </li>
         </ul>
+
+        <button
+          class="page-header__menu-toggle menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Открытие мобильного меню"
+        >
+          <svg width="40" height="40">
+            <use href="./images/sprite.svg#menu-burger"></use>
+          </svg>
+        </button>
       </div>
     </header>
 
     <main>
+      <!-- Mobile menu -->
+      <div class="mobile-menu js-menu-container" id="mobile-menu">
+        <div class="mobile-menu__container container">
+          <button
+            class="mobile-menu__menu-toggle menu-toggle js-close-menu"
+            aria-label="Закрытие мобильного меню"
+          >
+            <svg class="" width="40" height="40">
+              <use href="./images/sprite.svg#close-mobile-menu"></use>
+            </svg>
+          </button>
+
+          <ul class="mobile-menu__menu menu list">
+            <li class="menu__item">
+              <a class="menu__link link menu__link--current" href="./index.html">Студия</a>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link link" href="./portfolio.html">Портфолио</a>
+            </li>
+
+            <li class="menu__item">
+              <a class="menu__link link" href="">Контакты</a>
+            </li>
+          </ul>
+
+          <ul class="mobile-menu__contacts contacts list">
+            <li class="contacts__item">
+              <a class="contacts__link contacts__link--big link" href="tel:+380961111111">
+                +38 096 111 11 11</a
+              >
+            </li>
+
+            <li class="contacts__item">
+              <a class="contacts__link link" href="mailto:info@devstudio.com">
+                info@devstudio.com</a
+              >
+            </li>
+          </ul>
+
+          <ul class="mobile-menu__social-menu social-menu list">
+            <li class="social-menu__item">
+              <a class="social-menu__link link" href="#" target="_blank" rel="noopener noreferrer"
+                >Instagram</a
+              >
+            </li>
+            <li class="social-menu__item">
+              <a class="social-menu__link link" href="#" target="_blank" rel="noopener noreferrer"
+                >Twitter</a
+              >
+            </li>
+            <li class="social-menu__item">
+              <a class="social-menu__link link" href="#" target="_blank" rel="noopener noreferrer"
+                >Facebook</a
+              >
+            </li>
+            <li class="social-menu__item">
+              <a class="social-menu__link link" href="#" target="_blank" rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- Section hero -->
       <div class="container-fluid">
         <section class="hero">
@@ -155,32 +234,55 @@
           <h2 class="working__title section-title">Чем мы занимаемся</h2>
           <ul class="working__list list">
             <li class="working__item">
-              <img
-                src="./images/work1.jpg"
-                alt="Написание кода для десктопного приложения"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="./images/work/work-1.webp 1x, ./images/work/work-1@2x.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/work/work-1.jpg 1x, ./images/work/work-1@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <img
+                  src="#"
+                  alt="Написание кода для десктопного приложения"
+                  width="370"
+                  height="294"
+                />
+              </picture>
               <h3 class="working__overlay">Десктопные приложения</h3>
             </li>
 
             <li class="working__item">
-              <img
-                src="./images/work2.jpg"
-                alt="Разработка мобильного приложения"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="./images/work/work-2.webp 1x, ./images/work/work-2@2x.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/work/work-2.jpg 1x, ./images/work/work-2@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <img src="#" alt="Разработка мобильного приложения" width="370" height="294" />
+              </picture>
               <h3 class="working__overlay">Мобильные приложения</h3>
             </li>
 
             <li class="working__item">
-              <img
-                src="./images/work3.jpg"
-                alt="Подбор цвета на палитре"
-                width="370"
-                height="294"
-              />
+              <picture>
+                <source
+                  srcset="./images/work/work-3.webp 1x, ./images/work/work-3@2x.webp 2x"
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/work/work-3.jpg 1x, ./images/work/work-3@2x.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <img src="#" alt="Подбор цвета на палитре" width="370" height="294" />
+              </picture>
               <h3 class="working__overlay">Дизайнерские решения</h3>
             </li>
           </ul>
@@ -193,12 +295,48 @@
           <h2 class="team__title section-title">Наша команда</h2>
           <ul class="team__card-set list">
             <li class="team__card card-team">
-              <img
-                src="./images/team-mate1.jpg"
-                alt="Фото Игоря Демьяненко"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-1-desktop.webp    1x,
+                    ./images/team/team-1-desktop@2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-1-desktop.jpg    1x,
+                    ./images/team/team-1-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-1-tablet.webp    1x,
+                    ./images/team/team-1-tablet@2x.webp 2x
+                  "
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-1-tablet.jpg 1x, ./images/team/team-1-tablet@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-1-mobile.webp    1x,
+                    ./images/team/team-1-mobile@2x.webp 2x
+                  "
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-1-mobile.jpg 1x, ./images/team/team-1-mobile@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="#" alt="Фото Игоря Демьяненко" />
+              </picture>
 
               <div class="card-team__content">
                 <h3 class="card-team__name">Игорь Демьяненко</h3>
@@ -266,12 +404,48 @@
             </li>
 
             <li class="team__card card-team">
-              <img
-                src="./images/team-mate2.jpg"
-                alt="Фото Ольги Репиной"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-2-desktop.webp    1x,
+                    ./images/team/team-2-desktop@2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-2-desktop.jpg    1x,
+                    ./images/team/team-2-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-2-tablet.webp    1x,
+                    ./images/team/team-2-tablet@2x.webp 2x
+                  "
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-2-tablet.jpg 1x, ./images/team/team-2-tablet@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-2-mobile.webp    1x,
+                    ./images/team/team-2-mobile@2x.webp 2x
+                  "
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-2-mobile.jpg 1x, ./images/team/team-2-mobile@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="#" alt="Фото Ольги Репиной" />
+              </picture>
 
               <div class="card-team__content">
                 <h3 class="card-team__name">Ольга Репина</h3>
@@ -339,12 +513,48 @@
             </li>
 
             <li class="team__card card-team">
-              <img
-                src="./images/team-mate3.jpg"
-                alt="Фото Николая Тарасова"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-3-desktop.webp    1x,
+                    ./images/team/team-3-desktop@2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-3-desktop.jpg    1x,
+                    ./images/team/team-3-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-3-tablet.webp    1x,
+                    ./images/team/team-3-tablet@2x.webp 2x
+                  "
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-3-tablet.jpg 1x, ./images/team/team-3-tablet@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-3-mobile.webp    1x,
+                    ./images/team/team-3-mobile@2x.webp 2x
+                  "
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-3-mobile.jpg 1x, ./images/team/team-3-mobile@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="#" alt="Фото Николая Тарасова" />
+              </picture>
 
               <div class="card-team__content">
                 <h3 class="card-team__name">Николай Тарасов</h3>
@@ -412,12 +622,48 @@
             </li>
 
             <li class="team__card card-team">
-              <img
-                src="./images/team-mate4.jpg"
-                alt="Фото Михаила Ермакова"
-                width="270"
-                height="260"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/team/team-4-desktop.webp    1x,
+                    ./images/team/team-4-desktop@2x.webp 2x
+                  "
+                  media="(min-width: 1200px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-4-desktop.jpg    1x,
+                    ./images/team/team-4-desktop@2x.jpg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-4-tablet.webp    1x,
+                    ./images/team/team-4-tablet@2x.webp 2x
+                  "
+                  media="(min-width: 768px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-4-tablet.jpg 1x, ./images/team/team-4-tablet@2x.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/team/team-4-mobile.webp    1x,
+                    ./images/team/team-4-mobile@2x.webp 2x
+                  "
+                  media="(max-width: 767px)"
+                  type="image/webp"
+                />
+                <source
+                  srcset="./images/team/team-4-mobile.jpg 1x, ./images/team/team-4-mobile@2x.jpg 2x"
+                  media="(max-width: 767px)"
+                />
+                <img src="#" alt="Фото Михаила Ермакова" />
+              </picture>
 
               <div class="card-team__content">
                 <h3 class="card-team__name">Михаил Ермаков</h3>
@@ -756,7 +1002,13 @@
     </div>
     <!-- Backdrop.end  -->
 
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
-    <script src="./js/form.js"></script>
   </body>
 </html>

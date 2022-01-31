@@ -1,7 +1,8 @@
 .modal {
   @include centrAbsolut();
 
-  width: 528px;
+  max-width: 450px;
+  width: calc(100% - 30px);
   padding: 40px;
   min-height: 581px;
   border-radius: 4px;
@@ -94,5 +95,11 @@
   .btn-close:hover &,
   .btn-close:focus & {
     transform: rotate(-270deg);
+  }
+}
+
+@include desktop() {
+  .modal {
+    max-width: 528px;
   }
 }

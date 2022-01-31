@@ -1,3 +1,4 @@
+// Шрифт
 @function decimal-round($number, $digits: 0, $mode: round) {
   $n: 1;
   // $number must be a number
@@ -37,15 +38,44 @@
   letter-spacing: $ls;
 }
 
+// Центрирование флексом
 @mixin centrFlex($dflex: flex, $aligni: center, $justc: flex-start) {
   display: $dflex;
   justify-content: $justc;
   align-items: $aligni;
 }
 
+// Центрирование абсолют
 @mixin centrAbsolut() {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+// Медиа запрос
+@mixin mobile() {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xpix($dpr) {
+  @media (min-device-pixel-ratio: $dpr),
+    (min-resolution: ($dpr * 96dpi)),
+    (min-resolution: ($dpr + 0dppx)) {
+    @content;
+  }
 }

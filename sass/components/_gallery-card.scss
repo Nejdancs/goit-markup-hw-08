@@ -1,7 +1,3 @@
-.gallery-card {
-  width: calc(100% / 3 - var(--card-set-gap));
-}
-
 .gallery-card__link {
   display: flex;
   flex-direction: column;
@@ -75,4 +71,16 @@
 .gallery-card__description {
   color: var(--primary-text-color);
   @include font(30px, 16px);
+}
+
+@include tablet() {
+  .gallery-card {
+    width: calc(100% / 2 - var(--card-set-gap));
+  }
+}
+
+@include desktop() {
+  .gallery-card {
+    width: calc(100% / 3 - var(--card-set-gap));
+  }
 }

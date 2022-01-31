@@ -4,14 +4,11 @@
   background-color: #2f303a;
 }
 
-.page-footer__container {
-  @include centrFlex(flex, baseline, space-between);
-}
-
-/* Блок адреса и лого */
+// /* Блок адреса и лого */
 
 .page-footer__address {
-  max-width: 231px;
+  display: inline-block;
+  width: 232px;
 }
 
 .page-footer__logo {
@@ -19,10 +16,10 @@
   color: #ffffff;
 }
 
-/* Блок соцсетей */
+// /* Блок соцсетей */
 
 .page-footer__social-label {
-  display: inline-block;
+  display: block;
   margin-bottom: 20px;
 
   color: #ffffff;
@@ -30,7 +27,7 @@
   text-transform: uppercase;
 }
 
-/* Блок подписки на рассылку */
+// /* Блок подписки на рассылку */
 
 .page-footer__distribution-title {
   display: block;
@@ -41,7 +38,7 @@
   text-transform: uppercase;
 }
 
-/* Информация о разработчике */
+// /* Информация о разработчике */
 
 .page-footer__developer-wrap {
   margin-top: 20px;
@@ -49,4 +46,45 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .page-footer__social {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .page-footer__container {
+    text-align: center;
+  }
+
+  .page-footer__distribution {
+    margin-top: 60px;
+  }
+}
+
+@include tablet() {
+  .page-footer__container {
+    @include centrFlex(flex, baseline, center);
+    flex-wrap: wrap;
+  }
+
+  .page-footer__address {
+    margin-right: 165px;
+  }
+}
+
+@include desktop() {
+  .page-footer__container {
+    @include centrFlex(null, null, flex-start);
+  }
+  .page-footer__address {
+    width: 231px;
+    margin-right: 70px;
+  }
+
+  .page-footer__distribution {
+    margin-left: auto;
+  }
 }
