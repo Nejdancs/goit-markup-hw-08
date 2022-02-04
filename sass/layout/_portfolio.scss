@@ -1,5 +1,13 @@
 .portfolio {
   margin-top: 60px;
+
+  @include desktop() {
+    margin-top: 80px;
+  }
+
+  @media screen and (max-height: 479px) {
+    margin-top: 0;
+  }
 }
 
 .portfolio__filter {
@@ -43,10 +51,6 @@
 }
 
 @include tablet() {
-  .portfolio {
-    margin-top: 80px;
-  }
-
   .portfolio__filter {
     justify-content: center;
     flex-wrap: wrap;
@@ -56,13 +60,11 @@
   .portfolio__card-set {
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1 * var(--card-set-gap));
-    margin-left: calc(-1 * var(--card-set-gap));
+    margin: calc(-1 * var(--card-set-gap) / 2);
   }
 
   .portfolio__card {
-    margin-left: var(--card-set-gap);
-    margin-top: var(--card-set-gap);
+    margin: calc(var(--card-set-gap) / 2);
 
     background-color: #ffffff;
   }

@@ -2,6 +2,13 @@
   margin-top: 60px;
 
   background-color: #2f303a;
+  @include desktop() {
+    margin-top: 80px;
+  }
+
+  @media screen and (max-height: 479px) {
+    margin-top: 0;
+  }
 }
 
 .hero {
@@ -54,12 +61,6 @@
       background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
         url(../images/hero/hero-bg-desktop@2x.jpg);
     }
-  }
-}
-
-@include tablet() {
-  .container-fluid {
-    margin-top: 80px;
   }
 }
 

@@ -52,6 +52,11 @@
 .mobile-menu__social-menu {
   @include centrFlex(flex, center, null);
   flex-wrap: wrap;
+  margin-top: -10px;
+}
+
+.social-menu__item {
+  margin-top: 10px;
 }
 
 .social-menu__item:not(:last-child) {
@@ -67,10 +72,6 @@
 }
 
 @media screen and (max-width: 439px) {
-  .social-menu__item:last-child {
-    margin-top: 10px;
-  }
-
   .social-menu__item:nth-last-child(2) {
     border-right: none;
   }

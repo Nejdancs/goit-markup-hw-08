@@ -1,9 +1,11 @@
 .social-list {
   @include centrFlex(flex, center, center);
+  flex-wrap: wrap;
+  margin: -5px;
 }
 
-.social-list__item:not(:last-child) {
-  margin-right: 10px;
+.social-list__item {
+  margin: 5px;
 }
 
 .social-list__link {
