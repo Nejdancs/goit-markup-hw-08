@@ -263,9 +263,12 @@ img {
   color: var(--accent-color);
 }
 
-@media screen and (max-width: 439px) {
-  .social-menu__item:nth-last-child(2) {
-    border-right: none;
+@media screen and (max-width: 440px) {
+  .social-menu__item:nth-child(2n) {
+    border: none;
+  }
+  .mobile-menu__social-menu {
+    max-width: 280px;
   }
 }
 
@@ -303,6 +306,13 @@ img {
   color: var(--accent-color);
   font-size: 34px;
   line-height: 1.18;
+}
+
+@media screen and (max-width: 386px) {
+  .contacts__link--big {
+    font-size: 30px;
+    line-height: 1.13;
+  }
 }
 
 @media screen and (max-width: 767px) {

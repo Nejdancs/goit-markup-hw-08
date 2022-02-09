@@ -19,6 +19,12 @@
   @include font(40px, 34px, null, null);
 }
 
+@media screen and (max-width: 386px) {
+  .contacts__link--big {
+    @include font(34px, 30px, null, null);
+  }
+}
+
 @media screen and (max-width: 767px) {
   .contacts__item:not(:last-child) {
     margin-bottom: 32px;
