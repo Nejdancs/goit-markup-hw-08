@@ -2,8 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 9;
 
   background-color: #ffffff;
@@ -15,7 +15,7 @@
   visibility: hidden;
   pointer-events: none;
 
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .mobile-menu.is-open {
@@ -85,7 +85,6 @@
     padding-left: 40px;
     padding-right: 40px;
   }
-
 }
 
 @include tablet() {
